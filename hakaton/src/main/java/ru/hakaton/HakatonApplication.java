@@ -9,5 +9,4 @@ public class HakatonApplication {
     public static void main(String[] args) {
         SpringApplication.run(HakatonApplication.class, args);
     }
-
 }

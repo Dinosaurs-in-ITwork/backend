@@ -6,12 +6,12 @@ ru/hakaton/HakatonApplication.class
 ru/hakaton/model/Role.class
 ru/hakaton/service/JwtProviderService.class
 ru/hakaton/api/AuthController.class
-ru/hakaton/service/AuthService.class
 ru/hakaton/api/InitConfig.class
-ru/hakaton/utils/JwtUtils.class
+ru/hakaton/service/AuthService.class
 ru/hakaton/repository/UserRepository.class
+ru/hakaton/utils/JwtUtils.class
 ru/hakaton/model/dto/JwtResponse.class
-ru/hakaton/model/User.class
 ru/hakaton/model/dto/RefreshJwtRequest.class
-ru/hakaton/model/dto/JwtRequest.class
+ru/hakaton/model/User.class
 ru/hakaton/config/SecurityConfig.class
+ru/hakaton/model/dto/JwtRequest.class

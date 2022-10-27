@@ -25,26 +25,33 @@ public class SecurityConfig {
         return http
                 .httpBasic().disable()
                 .csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .authorizeRequests()
+                .anyRequest()
+                .permitAll()
                 .and()
-                .formLogin()
-         //       .loginPage("/login.html")
-                .loginProcessingUrl("/perform_login")
-                .defaultSuccessUrl("/", true)
-                .failureUrl("/login.html?error=true")
-                .and()
-                .logout()
-                .logoutUrl("/perform_logout")
-                .deleteCookies("JSESSIONID")
-                .and()
-                .authorizeHttpRequests(
-                        authz -> authz
-                                .antMatchers("/api/auth/login", "/api/auth/token","/v3/api-docs/"," /swagger-ui.html").permitAll()
-                                .anyRequest().authenticated()
-                                .and()
-                                .addFilterAfter(jwtFilter, UsernamePasswordAuthenticationFilter.class)
-                )
                 .build();
+//                .httpBasic().disable()
+//                .csrf().disable()
+//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                .and()
+//                .formLogin()
+//         //       .loginPage("/login.html")
+//                .loginProcessingUrl("/perform_login")
+//                .defaultSuccessUrl("/", true)
+//                .failureUrl("/login.html?error=true")
+//                .and()
+//                .logout()
+//                .logoutUrl("/perform_logout")
+//                .deleteCookies("JSESSIONID")
+//                .and()
+//                .authorizeHttpRequests(
+//                        authz -> authz
+//                                .antMatchers("/api/auth/login", "/api/auth/token","/v3/api-docs/"," /swagger-ui.html").permitAll()
+//                                .anyRequest().authenticated()
+//                                .and()
+//                                .addFilterAfter(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+//                )
+//                .build();
     }
 
 }
